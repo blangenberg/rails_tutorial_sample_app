@@ -1,5 +1,8 @@
 require 'test_helper'
 
+#
+# integration tests are akin to smoke tests
+#
 class SiteLayoutTest < ActionDispatch::IntegrationTest
   test "layout links" do
     get root_path
