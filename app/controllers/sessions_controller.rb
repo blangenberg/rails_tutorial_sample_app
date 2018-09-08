@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       # valid login
       # create session and redirect to user's show page
       log_in user
+      remember user
       redirect_to user  # equivalent to redirect_to(user_url(user))
     else
       # invalid login
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end
